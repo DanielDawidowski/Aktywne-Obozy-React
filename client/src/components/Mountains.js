@@ -87,7 +87,7 @@ const Mountains = () => {
                   <CardListTitle right>
                     <h5>Czarna Hańcza</h5>
                     <h4>Cena : 650 zł</h4>
-                    <Link to="/">
+                    <Link to="/form">
                       <h2>Aktualne</h2>
                     </Link>
                   </CardListTitle>

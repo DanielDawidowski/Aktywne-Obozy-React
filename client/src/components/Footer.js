@@ -104,7 +104,7 @@ const Footer = ({ background = "#000", mainColor, secondColor }) => (
               </h4>
             </ListItem>
           </Link>
-          <Link to="/">
+          <Link to="/form">
             <ListItem footer>
               <EnvelopeIcon mainColor={mainColor} secondColor={secondColor} />
               <h4 style={{ marginLeft: "2.8rem", color: mainColor }}>

@@ -16,6 +16,21 @@ const Menu = ({ history, toggleMenu, setToggleMenu }) => {
       {!isAuth() && (
         <>
           <li>
+            <Link style={isActive(history, "/mountains")} to="/mountains">
+              Wyjazdy w Góry
+            </Link>
+          </li>
+          <li>
+            <Link style={isActive(history, "/kayaks")} to="/kayaks">
+              Spływy Kajakowe
+            </Link>
+          </li>
+          <li>
+            <Link style={isActive(history, "/form")} to="/form">
+              Zapisz się
+            </Link>
+          </li>
+          {/* <li>
             <Link style={isActive(history, "/signin")} to="/signin">
               Signin
             </Link>
@@ -24,7 +39,7 @@ const Menu = ({ history, toggleMenu, setToggleMenu }) => {
             <Link style={isActive(history, "/signup")} to="/signup">
               Signup
             </Link>
-          </li>
+          </li> */}
         </>
       )}
       {isAuth() && (
