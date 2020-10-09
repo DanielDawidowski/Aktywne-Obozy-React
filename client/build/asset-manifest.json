@@ -1,19 +1,30 @@
 {
   "files": {
-    "main.js": "/static/js/main.1ab4d859.chunk.js",
-    "main.js.map": "/static/js/main.1ab4d859.chunk.js.map",
+    "main.js": "/static/js/main.eecab182.chunk.js",
+    "main.js.map": "/static/js/main.eecab182.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.09b85ec0.js",
     "runtime-main.js.map": "/static/js/runtime-main.09b85ec0.js.map",
-    "static/js/2.09f1b02a.chunk.js": "/static/js/2.09f1b02a.chunk.js",
-    "static/js/2.09f1b02a.chunk.js.map": "/static/js/2.09f1b02a.chunk.js.map",
+    "static/js/2.c5d7e6ef.chunk.js": "/static/js/2.c5d7e6ef.chunk.js",
+    "static/js/2.c5d7e6ef.chunk.js.map": "/static/js/2.c5d7e6ef.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.0addad0581661af42f10fae92611fefb.js": "/precache-manifest.0addad0581661af42f10fae92611fefb.js",
+    "precache-manifest.03c247dfe1ce26cd4d2d59cb4e9cd68c.js": "/precache-manifest.03c247dfe1ce26cd4d2d59cb4e9cd68c.js",
     "service-worker.js": "/service-worker.js",
-    "static/js/2.09f1b02a.chunk.js.LICENSE.txt": "/static/js/2.09f1b02a.chunk.js.LICENSE.txt"
+    "static/js/2.c5d7e6ef.chunk.js.LICENSE.txt": "/static/js/2.c5d7e6ef.chunk.js.LICENSE.txt",
+    "static/media/AO-LOGO-white.9fb0bfcc.svg": "/static/media/AO-LOGO-white.9fb0bfcc.svg",
+    "static/media/LogoBlue.b3423509.svg": "/static/media/LogoBlue.b3423509.svg",
+    "static/media/email.4dd5b544.svg": "/static/media/email.4dd5b544.svg",
+    "static/media/emailIcon.3db2ce91.svg": "/static/media/emailIcon.3db2ce91.svg",
+    "static/media/event.71e5c3c7.svg": "/static/media/event.71e5c3c7.svg",
+    "static/media/foto1.jpg": "/static/media/foto1.9d5dafbd.jpg",
+    "static/media/leafs-form.057c9430.svg": "/static/media/leafs-form.057c9430.svg",
+    "static/media/message.a826e2aa.svg": "/static/media/message.a826e2aa.svg",
+    "static/media/person.f61d2b26.svg": "/static/media/person.f61d2b26.svg",
+    "static/media/phone.c5161092.svg": "/static/media/phone.c5161092.svg",
+    "static/media/tatry.jpg": "/static/media/tatry.0b5272e6.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.09b85ec0.js",
-    "static/js/2.09f1b02a.chunk.js",
-    "static/js/main.1ab4d859.chunk.js"
+    "static/js/2.c5d7e6ef.chunk.js",
+    "static/js/main.eecab182.chunk.js"
   ]
 }
