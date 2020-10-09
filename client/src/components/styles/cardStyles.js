@@ -12,7 +12,7 @@ export const Card = styled(motion.div)`
   flex-direction: column;
 
   @media (max-width: 380px) {
-    margin: 0 0.5rem 3rem 1rem;
+    margin: 0 0.3rem 3rem 1rem;
     width: 339px;
   }
 

@@ -29,6 +29,37 @@ export const Container = styled.div`
         max-width: 140px;
       }
     `}
+
+  ${(props) =>
+    props.form &&
+    css`
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      @media (min-width: 1408px) {
+        max-width: 1000px;
+      }
+      @media (max-width: 380px) {
+        max-width: 100%;
+      }
+    `}
+
+  ${(props) =>
+    props.kayaks &&
+    css`
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      @media (min-width: 1408px) {
+        max-width: 1100px;
+      }
+      @media (max-width: 380px) {
+        max-width: 140px;
+      }
+    `}
+
   ${(props) =>
     props.right &&
     css`
@@ -109,6 +140,15 @@ export const Flex = styled.div`
       justify-content: space-around;
       @media (max-width: 380px) {
         display: grid;
+      }
+    `};
+
+  ${(props) =>
+    props.kayaks &&
+    css`
+      justify-content: space-around;
+      @media (max-width: 380px) {
+        flex-direction: column-reverse;
       }
     `};
 

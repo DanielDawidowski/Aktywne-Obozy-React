@@ -25,7 +25,7 @@ const theme = {
   light_grey: "#E5E5E5",
   offWhite: "#EDEDED",
   bs: "0 12px 24px 0 rgba(0, 0, 0, 0.09)",
-  font1: "0.4rem",
+  font1: "0.8rem",
   font2: "1rem",
   font3: "1.4rem",
   font4: "3.2rem",

@@ -26,6 +26,13 @@ export const WhiteBg = styled(motion.div)`
   @media (max-width: 400px) {
     padding: 26px;
   }
+  ${(props) =>
+    props.kayaks &&
+    css`
+      @media (min-width: 600px) {
+        margin-top: -14rem;
+      }
+    `}
 `;
 
 export const MountainFooter = styled(motion.div)`

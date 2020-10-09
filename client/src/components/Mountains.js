@@ -16,7 +16,6 @@ import {
   CardListItem,
   CardDetails,
   CardListTitle,
-  CardTitle,
 } from "./styles/cardStyles";
 import { List, ListItem, ListText } from "./styles/homeStyles";
 import MountainIcon from "../assets/SVG/mountain";

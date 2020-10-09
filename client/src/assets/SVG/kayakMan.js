@@ -2,15 +2,24 @@ import React from "react";
 import styled from "styled-components";
 
 const KayakMan = styled.svg`
-  width: 67px;
-  height: 50px;
   @media (max-width: 380px) {
     width: 38px;
     height: 43px;
   }
 `;
-const KayakBlueIcon = ({ mainColor = "#ffffff", secondColor = "#ffffff" }) => (
-  <KayakMan viewBox="0 0 67 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+const KayakBlueIcon = ({
+  mainColor = "#ffffff",
+  secondColor = "#ffffff",
+  width = "",
+  height = "",
+}) => (
+  <KayakMan
+    width={width}
+    height={height}
+    viewBox="0 0 67 50"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       d="M33 24C35.2091 24 37 22.2091 37 20C37 17.7909 35.2091 16 33 16C30.7909 16 29 17.7909 29 20C29 22.2091 30.7909 24 33 24Z"
       fill={secondColor}

@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 
 export const HomePage = styled(motion.div)`
   background-image: url(${BgImg});
-  background-position: 55% 85%;
   background-size: cover;
   background-attachment: fixed;
   width: 100%;
@@ -91,7 +90,18 @@ export const List = styled(motion.ul)`
       background: ${(props) => props.theme.white};
       margin-right: 2rem;
       @media (max-width: 480px) {
-        margin: 0.8rem;
+        margin: 0.2rem;
+      }
+    `}
+    ${(props) =>
+    props.kayaks &&
+    css`
+      height: auto;
+      padding: 1rem;
+      border-radius: 26px;
+      background: ${(props) => props.theme.white};
+      @media (max-width: 480px) {
+        margin-top: 12rem;
       }
     `}
 `;

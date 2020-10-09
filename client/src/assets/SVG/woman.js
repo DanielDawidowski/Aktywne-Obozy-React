@@ -5,15 +5,17 @@ const Woman = styled.svg`
   width: 121px;
   height: 297px;
   position: absolute;
-  right: 32%;
-  @media (max-width: 380px) {
+  right: -15%;
+
+  @media (max-width: 600px) {
     width: 87px;
     height: 175px;
     right: 5%;
   }
 `;
-const WomanIcon = () => (
+const WomanIcon = ({ style }) => (
   <Woman
+    style={style}
     // width="121"
     // height="297"
     viewBox="0 0 121 297"

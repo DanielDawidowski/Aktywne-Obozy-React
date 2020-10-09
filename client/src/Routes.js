@@ -7,6 +7,8 @@ import AdminRoute from "./auth/AdminRoute";
 // import Signin from "./components/Signin";
 import Home from "./components/Home";
 import Mountains from "./components/Mountains";
+import Kayaks from "./components/Kayaks";
+import Form from "./components/Form";
 
 const Routes = () => {
   const location = useLocation();
@@ -15,6 +17,8 @@ const Routes = () => {
       <Switch location={location} key={location.pathname}>
         <Route path="/" exact component={Home} />
         <Route path="/mountains" exact component={Mountains} />
+        <Route path="/kayaks" exact component={Kayaks} />
+        <Route path="/form" exact component={Form} />
 
         {/* <Route path="/signin" exact component={Signin} />
         <Route path="/signup" exact component={Signup} /> */}

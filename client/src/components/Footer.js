@@ -85,13 +85,18 @@ const Footer = ({ background = "#000", mainColor, secondColor }) => (
         <List footer>
           <Link to="/">
             <ListItem footer>
-              <KayakIcon mainColor={mainColor} secondColor={secondColor} />
+              <KayakIcon
+                mainColor={mainColor}
+                secondColor={secondColor}
+                width={"67px"}
+                height={"50px"}
+              />
               <h4 style={{ marginLeft: "2rem", color: mainColor }}>
                 Spływy Kajakowe
               </h4>
             </ListItem>
           </Link>
-          <Link to="/">
+          <Link to="/mountains">
             <ListItem footer>
               <MountainIcon mainColor={mainColor} secondColor={secondColor} />
               <h4 style={{ marginLeft: "2rem", color: mainColor }}>

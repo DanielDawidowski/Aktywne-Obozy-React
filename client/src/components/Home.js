@@ -29,7 +29,7 @@ import LeafLongSmall from "../assets/SVG/leaf-long-small";
 import Leaf1 from "../assets/SVG/leafs1";
 import Leaf2 from "../assets/SVG/leafs2";
 import WaveWhite from "../assets/SVG/WaveWhite";
-import WaveGreen from "../assets/SVG/wave-green";
+import WaveGreen from "../assets/SVG/wave";
 import LeafShortSmall from "../assets/SVG/leafs-short-small";
 import KayakIcon from "../assets/SVG/kayak-man";
 import MountainIcon from "../assets/SVG/mountain";
@@ -104,17 +104,21 @@ const Home = () => {
               </CardIcon>
               <CardList>
                 <CardListItem green>
-                  <CardDetails>
-                    <span>
-                      {" "}
-                      <CalendarIcon /> 30.06-05.07.2020
-                    </span>
-                    <span>
-                      {" "}
-                      <GroupIcon /> 15 wolnych miejsc
-                    </span>
-                  </CardDetails>
-                  <CardListTitle>Czarna Hańcza</CardListTitle>
+                  <Link to="/kayaks">
+                    <CardDetails>
+                      <span>
+                        {" "}
+                        <CalendarIcon /> 30.06-05.07.2020
+                      </span>
+                      <span>
+                        {" "}
+                        <GroupIcon /> 15 wolnych miejsc
+                      </span>
+                    </CardDetails>
+                  </Link>
+                  <Link to="/kayaks">
+                    <CardListTitle>Czarna Hańcza</CardListTitle>
+                  </Link>
                 </CardListItem>
                 <CardListItem>
                   <CardDetails>
@@ -140,17 +144,21 @@ const Home = () => {
               </CardIcon>
               <CardList>
                 <CardListItem blue>
-                  <CardDetails>
-                    <span>
-                      {" "}
-                      <CalendarIcon /> 30.06-05.07.2020
-                    </span>
-                    <span>
-                      {" "}
-                      <GroupIcon /> 15 wolnych miejsc
-                    </span>
-                  </CardDetails>
-                  <CardListTitle>Zakopane</CardListTitle>
+                  <Link to="/mountains">
+                    <CardDetails>
+                      <span>
+                        {" "}
+                        <CalendarIcon /> 30.06-05.07.2020
+                      </span>
+                      <span>
+                        {" "}
+                        <GroupIcon /> 15 wolnych miejsc
+                      </span>
+                    </CardDetails>
+                  </Link>
+                  <Link to="/mountains">
+                    <CardListTitle>Zakopane</CardListTitle>
+                  </Link>
                 </CardListItem>
                 <CardListItem>
                   <CardDetails>
@@ -174,7 +182,7 @@ const Home = () => {
             </Card>
           </Flex>
         </Container>
-        <WaveGreen />
+        <WaveGreen background={"#80FC1E"} opacity={"0.22"} />
         <Container middle>
           <Plants spaceAround>
             <Leaf1 />
@@ -211,6 +219,7 @@ const Home = () => {
             </List>
           </Flex>
         </Container>
+
         <Footer
           background={"#71F55B"}
           mainColor={"#0075FF"}

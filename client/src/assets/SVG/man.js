@@ -12,8 +12,13 @@ const Man = styled.svg`
     left: -7%;
   }
 `;
-const ManIcon = () => (
-  <Man viewBox="0 0 99 294" fill="none" xmlns="http://www.w3.org/2000/svg">
+const ManIcon = ({ style }) => (
+  <Man
+    style={style}
+    viewBox="0 0 99 294"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       d="M57.4587 40.7176C57.4587 40.7176 51.5737 39.0068 50.3114 40.8684C49.0491 42.73 52.0324 56.2252 52.0324 56.2252L65 57L60.4745 45.7643L57.4587 40.7176Z"
       fill="#2F2E41"
