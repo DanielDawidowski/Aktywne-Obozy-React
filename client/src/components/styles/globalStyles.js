@@ -70,14 +70,20 @@ export const Container = styled.div`
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      @media (min-width: 1408px) {
-        max-width: 1000px;
+      @media (min-width: 1050px) and (max-width: 1650px) {
+        max-width: 900px;
+      }
+      @media (min-width: 801px) and (max-width: 1050px) {
+        max-width: 400px;
+      }
+      @media (min-width: 601px) and (max-width: 800px) {
+        max-width: 300px;
+      }
+      @media (min-width: 401px) and (max-width: 600px) {
+        max-width: 200px;
       }
       @media (max-width: 400px) {
         max-width: 180px;
-      }
-      @media (max-width: 350px) {
-        max-width: 150px;
       }
     `}
 
