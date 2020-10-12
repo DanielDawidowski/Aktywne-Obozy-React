@@ -5,10 +5,30 @@ const Oar = styled.svg`
   position: absolute;
   width: 389px;
   height: 337px;
+  bottom: 1%;
+  left: 23%;
   /* transform: rotate(1deg); */
-  @media (max-width: 600px) {
-    bottom: -60%;
+  @media (min-width: 1400px) {
+    bottom: -15%;
+    left: 15%;
+    width: 378px;
+    height: 330px;
+  }
+  @media (min-width: 1201px) and (max-width: 1400px) {
+    bottom: -7%;
     left: 3%;
+    width: 378px;
+    height: 325px;
+  }
+  @media (min-width: 801px) and (max-width: 1200px) {
+    bottom: 2%;
+    left: 3%;
+    width: 358px;
+    height: 305px;
+  }
+  @media (max-width: 800px) {
+    bottom: -35%;
+    left: 23%;
     width: 238px;
     height: 275px;
   }

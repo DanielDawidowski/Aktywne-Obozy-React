@@ -5,12 +5,21 @@ const Woman = styled.svg`
   width: 121px;
   height: 297px;
   position: absolute;
+  top: 20%;
   right: -15%;
 
-  @media (max-width: 600px) {
+  @media (max-width: 350px) {
     width: 87px;
     height: 175px;
-    right: 5%;
+    right: -12%;
+    top: 20%;
+  }
+
+  @media (min-width: 351px) and (max-width: 800px) {
+    width: 87px;
+    height: 175px;
+    right: -30%;
+    top: 20%;
   }
 `;
 const WomanIcon = ({ style }) => (

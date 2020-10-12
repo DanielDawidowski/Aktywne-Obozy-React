@@ -12,8 +12,17 @@ export const MountainsPage = styled(motion.div)`
   width: 100%;
   height: 90vh;
 
-  @media (max-width: 400px) {
-    height: 115vh;
+  @media (max-width: 800px) {
+    height: 110vh;
+  }
+`;
+
+export const MountainInfo = styled(motion.div)`
+  position: relative;
+  height: 50vh;
+  background-color: ${(props) => props.theme.light_blue};
+  @media (max-width: 800px) {
+    height: 35vh;
   }
 `;
 
@@ -23,20 +32,35 @@ export const WhiteBg = styled(motion.div)`
   border-radius: 26px;
   background-color: ${(props) => props.theme.white};
   padding: 56px;
-  @media (max-width: 400px) {
+  @media (max-width: 800px) {
     padding: 26px;
   }
   ${(props) =>
     props.kayaks &&
     css`
-      @media (min-width: 600px) {
+      @media (max-width: 800px) {
         margin-top: -14rem;
+      }
+      @media (max-width: 400px) {
+        margin-top: 4rem;
+        margin-left: 2rem;
+        padding: 25px;
+        width: 250px;
       }
     `}
 `;
 
 export const MountainFooter = styled(motion.div)`
-  margin-top: 12%;
+  margin-top: 10%;
+  @media (min-width: 801px) and (max-width: 1200px) {
+    margin-top: -8%;
+  }
+  @media (min-width: 601px) and (max-width: 800px) {
+    margin-top: -15%;
+  }
+  @media (min-width: 401px) and (max-width: 600px) {
+    margin-top: -25%;
+  }
   @media (max-width: 400px) {
     margin-top: -42%;
   }

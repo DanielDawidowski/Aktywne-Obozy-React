@@ -9,15 +9,53 @@ export const HomePage = styled(motion.div)`
   width: 100%;
   height: 80vh;
 
-  @media (min-width: 330px) {
+  @media (max-width: 800px) {
     background-position: 50% 60%;
+    height: 90vh;
+  }
+`;
+
+export const HomeCards = styled(motion.div)`
+  width: 100%;
+  height: 80vh;
+
+  @media (max-width: 801px) {
+    height: 140vh;
+  }
+
+  @media (min-width: 501px) and (max-width: 800px) {
+    height: 230vh;
+  }
+
+  @media (min-width: 401px) and (max-width: 500px) {
+    height: 150vh;
+  }
+
+  @media (min-width: 200px) and (max-width: 400px) {
+    height: 210vh;
+  }
+`;
+
+export const HomeFooter = styled(motion.div)`
+  margin-top: 25%;
+  @media (min-width: 801px) and (max-width: 1200px) {
+    margin-top: 28%;
+  }
+  @media (min-width: 601px) and (max-width: 800px) {
+    margin-top: 2%;
+  }
+  @media (min-width: 401px) and (max-width: 600px) {
+    margin-top: -5%;
+  }
+  @media (max-width: 400px) {
+    margin-top: -12%;
   }
 `;
 
 export const Plants = styled(motion.div)`
   position: absolute;
   top: -88%;
-  @media (max-width: 380px) {
+  @media (max-width: 800px) {
     top: -228%;
   }
 
@@ -34,7 +72,7 @@ export const ListItem = styled(motion.li)`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 0 3rem;
+  /* padding: 0 3rem; */
 
   ${(props) =>
     props.footer &&
@@ -43,8 +81,8 @@ export const ListItem = styled(motion.li)`
       &:last-child {
         /* margin-bottom: 0; */
       }
-      @media (max-width: 380px) {
-        padding: 0;
+      @media (max-width: 1400px) {
+        padding: 0 0;
         margin-bottom: 0;
         margin-right: 0.7rem;
         h4 {
@@ -69,14 +107,13 @@ export const ListItem = styled(motion.li)`
 
 export const List = styled(motion.ul)`
   position: relative;
-  margin-top: 4rem;
   display: grid;
 
   ${(props) =>
     props.footer &&
     css`
       margin-top: 0;
-      @media (max-width: 380px) {
+      @media (max-width: 1400px) {
         display: flex;
         /* margin-top: -10%; */
       }
@@ -89,6 +126,9 @@ export const List = styled(motion.ul)`
       border-radius: 26px;
       background: ${(props) => props.theme.white};
       margin-right: 2rem;
+      @media (max-width: 320px) {
+        transform: scale(0.7);
+      }
       @media (max-width: 480px) {
         margin: 0.2rem;
       }
@@ -100,8 +140,14 @@ export const List = styled(motion.ul)`
       padding: 1rem;
       border-radius: 26px;
       background: ${(props) => props.theme.white};
-      @media (max-width: 480px) {
-        margin-top: 12rem;
+      @media (max-width: 360px) {
+        transform: scale(0.7);
+      }
+      @media (max-width: 1200px) {
+        margin: 17rem 1rem 1rem 1rem;
+      }
+      @media (max-width: 800px) {
+        margin: 12rem 1rem 1rem 1rem;
       }
     `}
 `;

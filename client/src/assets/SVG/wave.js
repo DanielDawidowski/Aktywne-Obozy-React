@@ -2,8 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 const Wave = styled.svg`
-  @media (max-width: 600px) {
-    margin-top: 198%;
+  /* @media (max-width: 400px) {
+    margin-top: 148%;
+  } */
+  @media (min-width: 401px) and (max-width: 800px) {
+    margin-top: 18%;
   }
 `;
 

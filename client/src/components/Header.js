@@ -18,7 +18,7 @@ const Header = ({ toggleMenu, setToggleMenu }) => {
         ease: [0.6, 0.05, -0.01, 0.9],
       }}
     >
-      <Container>
+      <Container header>
         <Flex spaceBetween paddingTop>
           <Logo>
             <Link className="link" to="/">

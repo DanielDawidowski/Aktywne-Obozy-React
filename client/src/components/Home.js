@@ -4,6 +4,8 @@ import Typical from "react-typical";
 import Footer from "./Footer";
 import {
   HomePage,
+  HomeCards,
+  HomeFooter,
   Plants,
   List,
   ListItem,
@@ -80,7 +82,9 @@ const Home = () => {
             </h4>
           </MainText>
         </Container>
-        <WaveWhite />
+      </HomePage>
+      <WaveWhite />
+      <HomeCards>
         <Container middle>
           <Plants>
             <LeafLongSmall />
@@ -182,50 +186,52 @@ const Home = () => {
             </Card>
           </Flex>
         </Container>
-        <WaveGreen background={"#80FC1E"} opacity={"0.22"} />
-        <Container middle>
-          <Plants spaceAround>
-            <Leaf1 />
-            <Leaf2 />
-          </Plants>
-          <MainText>
-            <h1>
-              <span className="afterline">Gwa</span>rantujemy
-            </h1>
-          </MainText>
-        </Container>
-        <Container>
-          <Flex spaceAround>
-            <ChildrenImage />
-            <List>
-              <ListItem>
-                <CircleIcon lightBlue>
-                  <FunIcon />
-                </CircleIcon>
-                <ListText>Dobra Zabawę</ListText>
-              </ListItem>
-              <ListItem>
-                <CircleIcon lightBlue>
-                  <PhotoIcon />
-                </CircleIcon>
-                <ListText>Miłe Wspomnienia</ListText>
-              </ListItem>
-              <ListItem>
-                <CircleIcon lightBlue>
-                  <LuggageIcon />
-                </CircleIcon>
-                <ListText>Udane Wakacje</ListText>
-              </ListItem>
-            </List>
-          </Flex>
-        </Container>
+      </HomeCards>
 
+      <WaveGreen background={"#80FC1E"} opacity={"0.22"} />
+      <Container middle>
+        <Plants spaceAround>
+          <Leaf1 />
+          <Leaf2 />
+        </Plants>
+        <MainText>
+          <h1>
+            <span className="afterline">Gwa</span>rantujemy
+          </h1>
+        </MainText>
+      </Container>
+      <Container>
+        <Flex spaceAround>
+          <ChildrenImage />
+          <List>
+            <ListItem>
+              <CircleIcon lightBlue>
+                <FunIcon />
+              </CircleIcon>
+              <ListText>Dobra Zabawę</ListText>
+            </ListItem>
+            <ListItem>
+              <CircleIcon lightBlue>
+                <PhotoIcon />
+              </CircleIcon>
+              <ListText>Miłe Wspomnienia</ListText>
+            </ListItem>
+            <ListItem>
+              <CircleIcon lightBlue>
+                <LuggageIcon />
+              </CircleIcon>
+              <ListText>Udane Wakacje</ListText>
+            </ListItem>
+          </List>
+        </Flex>
+      </Container>
+      <HomeFooter>
         <Footer
           background={"#71F55B"}
           mainColor={"#0075FF"}
           secondColor={"#A3EFFF"}
         />
-      </HomePage>
+      </HomeFooter>
     </Layout>
   );
 };

@@ -5,8 +5,9 @@ const Wave = styled.svg`
   margin-top: -15%;
   margin-bottom: -1%;
 
-  @media (max-width: 380px) {
-    margin-top: -15%;
+  @media (max-width: 350px) {
+    margin-top: -25%;
+    margin-bottom: -2%;
   }
 `;
 

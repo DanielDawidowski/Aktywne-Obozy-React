@@ -5,11 +5,11 @@ const Man = styled.svg`
   width: 99px;
   height: 294px;
   position: absolute;
-  left: 31%;
-  @media (max-width: 380px) {
+  left: -25%;
+  @media (max-width: 800px) {
     width: 138px;
     height: 175px;
-    left: -7%;
+    left: -37%;
   }
 `;
 const ManIcon = ({ style }) => (

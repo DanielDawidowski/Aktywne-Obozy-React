@@ -27,6 +27,9 @@ import { ReactComponent as Message } from "../assets/SVG/message.svg";
 import { ReactComponent as EIcon } from "../assets/SVG/event.svg";
 import { ReactComponent as EmailIcon } from "../assets/SVG/emailIcon.svg";
 import { ReactComponent as LeafsForm } from "../assets/SVG/leafs-form.svg";
+import { ReactComponent as FormImage } from "../assets/SVG/form-image.svg";
+
+// import formImg from "../assets/Images/form-image.jpg";
 
 import Footer from "./Footer";
 
@@ -110,54 +113,7 @@ const Form = () => {
         exit="exit"
       >
         <Container form>
-          <Flex spaceAround>
-            <Events list>
-              <Event>
-                <EventIcon>
-                  <MountainIcon mainColor={"#A44F3E"} secondColor={"#6D3326"} />
-                </EventIcon>
-                <EventDetails>
-                  <Price>cena: 650 zł</Price>
-                  <Date>
-                    <CalendarIcon /> 30.06-05.07.2020
-                  </Date>
-                  <Title>Zakopane</Title>
-                  <Group>
-                    <GroupIcon />
-                    <div style={{ fontSize: "1.4rem", paddingRight: "0.4rem" }}>
-                      15
-                    </div>{" "}
-                    wolnych miejsc
-                  </Group>
-                </EventDetails>
-              </Event>
-              <Event finished>
-                <EventIcon>
-                  <MountainIcon mainColor={"#F21B3F"} secondColor={"#F9637C"} />
-                  <h3>Zakończony</h3>
-                </EventIcon>
-              </Event>
-              <Event>
-                <EventIcon>
-                  <KayakIcon
-                    mainColor={"#F21B3F"}
-                    secondColor={"#F9637C"}
-                    width={"67px"}
-                    height={"50px"}
-                  />
-                </EventIcon>
-              </Event>
-              <Event>
-                <EventIcon>
-                  <KayakIcon
-                    mainColor={"#0075FF"}
-                    secondColor={"#00CFFB"}
-                    width={"67px"}
-                    height={"50px"}
-                  />
-                </EventIcon>
-              </Event>
-            </Events>
+          <Flex center>
             <RegisterForm onSubmit={clickSubmit}>
               <EmailIcon className="email-form" />
               <LeafsForm className="leafs-form" />
@@ -207,7 +163,7 @@ const Form = () => {
               </label>
               <Confirm>
                 <button>Zapisz się</button>
-                <div>cena: 650 zł</div>
+                {/* <div>cena: 650 zł</div> */}
               </Confirm>
             </RegisterForm>
           </Flex>
@@ -215,9 +171,9 @@ const Form = () => {
       </FormPage>
       <FormFooter>
         <Footer
-          background={"#D07230"}
-          mainColor={"#FFFFFF"}
-          secondColor={"#CCC3C3"}
+          background={"#FF9900"}
+          mainColor={"#0075FF"}
+          secondColor={"#ffffff"}
         />
       </FormFooter>
     </Layout>
@@ -225,3 +181,56 @@ const Form = () => {
 };
 
 export default Form;
+
+{
+  /* <FormImage /> */
+}
+{
+  /* <Events list>
+              <Event>
+                <EventIcon>
+                  <MountainIcon mainColor={"#A44F3E"} secondColor={"#6D3326"} />
+                </EventIcon>
+                <EventDetails>
+                  <Price>cena: 650 zł</Price>
+                  <Date>
+                    <CalendarIcon /> 30.06-05.07.2020
+                  </Date>
+                  <Title>Zakopane</Title>
+                  <Group>
+                    <GroupIcon />
+                    <div style={{ fontSize: "1.4rem", paddingRight: "0.4rem" }}>
+                      15
+                    </div>{" "}
+                    wolnych miejsc
+                  </Group>
+                </EventDetails>
+              </Event>
+              <Event finished>
+                <EventIcon>
+                  <MountainIcon mainColor={"#F21B3F"} secondColor={"#F9637C"} />
+                  <h3>Zakończony</h3>
+                </EventIcon>
+              </Event>
+              <Event>
+                <EventIcon>
+                  <KayakIcon
+                    mainColor={"#F21B3F"}
+                    secondColor={"#F9637C"}
+                    width={"67px"}
+                    height={"50px"}
+                  />
+                </EventIcon>
+              </Event>
+              <Event>
+                <EventIcon>
+                  <KayakIcon
+                    mainColor={"#0075FF"}
+                    secondColor={"#00CFFB"}
+                    width={"67px"}
+                    height={"50px"}
+                  />
+                </EventIcon>
+              </Event>
+            </Events> */
+}

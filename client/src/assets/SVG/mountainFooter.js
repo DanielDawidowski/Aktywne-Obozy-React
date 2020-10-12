@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Mountain = styled.svg`
   width: 67px;
   height: 45px;
-  @media (max-width: 380px) {
+  @media (max-width: 600px) {
     width: 38px;
     height: 43px;
   }

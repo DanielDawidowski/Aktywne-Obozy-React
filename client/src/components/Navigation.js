@@ -20,7 +20,7 @@ const Navigation = ({ toggleMenu, setToggleMenu }) => {
             animate={{ x: toggleMenu ? 0 : "-100%" }}
             transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
           >
-            <Container>
+            <Container header>
               <NavHeader>
                 <Flex spaceBetween noHeight paddingTop>
                   <Link className="link" to="/">

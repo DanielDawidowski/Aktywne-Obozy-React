@@ -48,10 +48,11 @@ body {
   overscroll-behavior: none;
   overflow-x: hidden;
   color: ${(props) => props.theme.brown};
+  /* overflow: hidden; */
 }
 
 a {
-  text-decoration: none
+  text-decoration: none;
 }
   a:focus {
     outline: none;

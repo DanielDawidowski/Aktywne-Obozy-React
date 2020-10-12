@@ -11,7 +11,15 @@ export const Card = styled(motion.div)`
   align-items: center;
   flex-direction: column;
 
-  @media (max-width: 380px) {
+  @media (max-width: 361px) {
+    transform: scale(0.8);
+  }
+
+  @media (max-width: 320px) {
+    transform: scale(0.7);
+  }
+
+  @media (max-width: 361px) and (max-width: 800px) {
     margin: 0 0.3rem 3rem 1rem;
     width: 339px;
   }
@@ -34,14 +42,22 @@ export const Card = styled(motion.div)`
         #71f55b 1.84%,
         rgba(163, 239, 255, 0.78) 98.2%
       );
+      @media (max-width: 800px) {
+        margin-top: 3rem;
+      }
     `};
   ${(props) =>
     props.white &&
     css`
       background: ${(props) => props.theme.white};
       min-height: 550px;
-      @media (max-width: 380px) {
+      @media (max-width: 801px) and (max-width: 1200px) {
         min-height: 450px;
+        width: 350px;
+      }
+      @media (min-width: 350px) and (max-width: 800px) {
+        min-height: 430px;
+        width: 320px;
       }
     `};
 `;
@@ -58,7 +74,7 @@ export const CardIcon = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (max-width: 380px) {
+  @media (max-width: 800px) {
     width: 108px;
     height: 108px;
     top: -10%;
@@ -68,7 +84,7 @@ export const CardIcon = styled(motion.div)`
     props.blue &&
     css`
       border: 3px solid ${(props) => props.theme.light_green};
-      @media (max-width: 380px) {
+      @media (max-width: 800px) {
         width: 108px;
         height: 108px;
         top: -10%;
@@ -79,7 +95,7 @@ export const CardIcon = styled(motion.div)`
     props.green &&
     css`
       border: 3px solid ${(props) => props.theme.light_blue};
-      @media (max-width: 380px) {
+      @media (max-width: 800px) {
         width: 108px;
         height: 108px;
         top: -10%;
@@ -93,7 +109,7 @@ export const CardIcon = styled(motion.div)`
       left: 55%;
       border: none;
       background: transparent;
-      @media (max-width: 380px) {
+      @media (max-width: 800px) {
         width: 108px;
         height: 108px;
         top: 0;
@@ -112,7 +128,7 @@ export const CircleIcon = styled(motion.div)`
   border-radius: 50%;
   margin: 8px;
   padding: 8px;
-  @media (max-width: 380px) {
+  @media (max-width: 800px) {
     width: 57px;
     height: 57px;
   }
@@ -122,7 +138,7 @@ export const CircleIcon = styled(motion.div)`
       width: 67px;
       height: 67px;
       background: ${(props) => props.theme.gold_transparent};
-      /* @media (max-width: 380px) {
+      /* @media (max-width: 800px) {
         display: flex;
       } */
     `}
@@ -155,7 +171,7 @@ export const CircleIcon = styled(motion.div)`
       border: 2px solid ${(props) => props.theme.light_green};
       width: 57px;
       height: 57px;
-      @media (max-width: 380px) {
+      @media (max-width: 800px) {
         width: 47px;
         height: 47px;
       }
@@ -173,7 +189,7 @@ export const CardDetails = styled(motion.div)`
     align-items: center;
     margin-bottom: 0.4rem;
     width: 100%;
-    @media (max-width: 380px) {
+    @media (max-width: 800px) {
       font-size: ${(props) => props.theme.font2};
     }
   }

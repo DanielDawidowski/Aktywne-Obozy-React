@@ -6,7 +6,7 @@ const Children = styled.svg`
   width: 499px;
   height: 387px;
 
-  @media (max-width: 380px) {
+  @media (max-width: 800px) {
     margin-top: 4rem;
     width: 299px;
     height: 187px;

@@ -4,14 +4,48 @@ import styled from "styled-components";
 const Kayak = styled.svg`
   position: absolute;
   bottom: -15%;
-  right: -50%;
-  width: 568px;
-  height: 568px;
-  @media (max-width: 600px) {
+  right: -30%;
+  width: 468px;
+  height: 468px;
+  transform: rotate(100deg);
+  @media (min-width: 1401px) {
+    transform: rotate(180deg);
+  }
+
+  @media (min-width: 1201px) and (max-width: 1400px) {
     bottom: -35%;
-    left: 3%;
-    width: 308px;
-    height: 305px;
+    left: 13%;
+    width: 378px;
+    height: 375px;
+  }
+
+  @media (min-width: 801px) and (max-width: 1200px) {
+    bottom: -25%;
+    left: 23%;
+    width: 258px;
+    height: 255px;
+  }
+
+  @media (min-width: 401px) and (max-width: 800px) {
+    bottom: -30%;
+    left: 23%;
+    width: 278px;
+    height: 275px;
+  }
+  /* 
+  @media (max-width: 400px) {
+    bottom: -25%;
+    left: 23%;
+    width: 258px;
+    height: 255px;
+    transform: rotate(100deg);
+  } */
+
+  @media (max-width: 400px) {
+    bottom: -25%;
+    left: 23%;
+    width: 258px;
+    height: 255px;
     transform: rotate(100deg);
   }
 `;

@@ -11,7 +11,7 @@ export const Container = styled.div`
   @media (min-width: 1216px) {
     max-width: 1000px;
   }
-  @media (min-width: 1408px) {
+  @media (min-width: 1408px) and (max-width: 2000px) {
     max-width: 1200px;
   }
 
@@ -22,26 +22,62 @@ export const Container = styled.div`
       justify-content: center;
       align-items: flex-start;
       flex-direction: column;
-      @media (min-width: 1408px) {
-        max-width: 1000px;
+      @media (min-width: 1050px) and (max-width: 1650px) {
+        max-width: 900px;
       }
-      @media (max-width: 380px) {
-        max-width: 140px;
+      @media (min-width: 801px) and (max-width: 1050px) {
+        max-width: 400px;
+      }
+      @media (min-width: 601px) and (max-width: 800px) {
+        max-width: 300px;
+      }
+      @media (min-width: 401px) and (max-width: 600px) {
+        max-width: 200px;
+      }
+      @media (max-width: 400px) {
+        max-width: 180px;
       }
     `}
+
+  ${(props) =>
+    props.header &&
+    css`
+      @media (min-width: 1450px) and (max-width: 2050px) {
+        max-width: 1300px;
+      }
+      @media (min-width: 1051px) and (max-width: 1450px) {
+        max-width: 1000px;
+      }
+      @media (min-width: 801px) and (max-width: 1050px) {
+        max-width: 700px;
+      }
+      @media (min-width: 601px) and (max-width: 800px) {
+        max-width: 500px;
+      }
+      @media (min-width: 401px) and (max-width: 600px) {
+        max-width: 320px;
+      }
+      @media (max-width: 400px) {
+        max-width: 300px;
+      }
+    `}
+  
 
   ${(props) =>
     props.form &&
     css`
       display: flex;
       justify-content: center;
-      align-items: flex-start;
+      align-items: center;
       flex-direction: column;
       @media (min-width: 1408px) {
         max-width: 1000px;
       }
-      @media (max-width: 380px) {
-        max-width: 100%;
+      @media (max-width: 400px) {
+        max-width: 180px;
+      }
+      @media (max-width: 350px) {
+        max-width: 150px;
       }
     `}
 
@@ -51,29 +87,49 @@ export const Container = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-direction: row;
-      @media (min-width: 1408px) {
-        max-width: 1100px;
+      @media (min-width: 1050px) and (max-width: 1450px) {
+        max-width: 800px;
       }
-      @media (max-width: 380px) {
-        max-width: 140px;
+      @media (min-width: 801px) and (max-width: 1050px) {
+        max-width: 400px;
+      }
+      @media (min-width: 601px) and (max-width: 800px) {
+        max-width: 300px;
+      }
+      @media (min-width: 401px) and (max-width: 600px) {
+        max-width: 200px;
+      }
+      @media (max-width: 400px) {
+        max-width: 180px;
       }
     `}
+
 
   ${(props) =>
     props.right &&
     css`
       display: flex;
       justify-content: center;
-      align-items: flex-end;
+      align-items: center;
       flex-direction: column;
       @media (min-width: 1408px) {
         max-width: 1000px;
+        align-items: flex-end;
       }
-      @media (max-width: 380px) {
-        justify-content: center;
-        align-items: center;
-        max-width: 140px;
+      @media (min-width: 1050px) and (max-width: 1407px) {
+        max-width: 800px;
+      }
+      @media (min-width: 801px) and (max-width: 1050px) {
+        max-width: 400px;
+      }
+      @media (min-width: 601px) and (max-width: 800px) {
+        max-width: 300px;
+      }
+      @media (min-width: 401px) and (max-width: 600px) {
+        max-width: 200px;
+      }
+      @media (max-width: 400px) {
+        max-width: 200px;
       }
     `}
 
@@ -85,7 +141,7 @@ export const Container = styled.div`
       align-items: center;
       height: auto;
       margin-top: -8%;
-      @media (max-width: 380px) {
+      @media (max-width: 800px) {
         margin-top: 0;
       }
     `}
@@ -105,8 +161,8 @@ export const Container = styled.div`
       @media (min-width: 1408px) {
         max-width: 600px;
       }
-      @media (max-width: 380px) {
-        margin-top: -18%;
+      @media (max-width: 400px) {
+        margin-top: -25%;
         max-width: 250px;
       }
     `}
@@ -129,16 +185,16 @@ export const Flex = styled.div`
     props.spaceBetween &&
     css`
       justify-content: space-between;
-      @media (max-width: 380px) {
+      /* @media (max-width: 1000px) {
         justify-content: space-around;
-      }
+      } */
     `};
 
   ${(props) =>
     props.spaceAround &&
     css`
       justify-content: space-around;
-      @media (max-width: 380px) {
+      @media (max-width: 1200px) {
         display: grid;
       }
     `};
@@ -147,7 +203,7 @@ export const Flex = styled.div`
     props.kayaks &&
     css`
       justify-content: space-around;
-      @media (max-width: 380px) {
+      @media (max-width: 800px) {
         flex-direction: column-reverse;
       }
     `};
@@ -156,7 +212,7 @@ export const Flex = styled.div`
     props.center &&
     css`
       justify-content: center;
-      @media (max-width: 380px) {
+      @media (max-width: 850px) {
         display: grid;
       }
     `};
@@ -195,15 +251,12 @@ export const Flex = styled.div`
   ${(props) =>
     props.BlueBG &&
     css`
-      height: 75vh;
+      height: 90vh;
       width: 100%;
       margin: 0 auto;
       padding-bottom: 12rem;
       background: ${(props) => props.theme.light_blue};
-      @media (min-width: 2008px) {
-        width: 100vw;
-      }
-      @media (max-width: 608px) {
+      @media (max-width: 850px) {
         height: 150vh;
         padding-bottom: 4rem;
       }
@@ -283,7 +336,7 @@ export const MainText = styled(motion.div)`
     font-size: ${(props) => props.theme.font3};
   }
 
-  @media (max-width: 380px) {
+  @media (max-width: 800px) {
     h1 {
       font-size: ${(props) => props.theme.font3};
     }

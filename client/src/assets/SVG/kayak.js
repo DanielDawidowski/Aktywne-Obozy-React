@@ -7,11 +7,37 @@ const Kayak = styled.svg`
   left: 20%;
   width: 568px;
   height: 568px;
-  @media (max-width: 600px) {
-    bottom: -68%;
+
+  @media (min-width: 1400px) {
+    bottom: -15%;
+    left: 17%;
+    width: 408px;
+    height: 405px;
+  }
+
+  @media (min-width: 1201px) and (max-width: 1400px) {
+    bottom: -8%;
+    left: 13%;
+    width: 378px;
+    height: 375px;
+  }
+  @media (min-width: 801px) and (max-width: 1200px) {
+    bottom: 1%;
     left: 3%;
+    width: 358px;
+    height: 355px;
+  }
+  @media (min-width: 401px) and (max-width: 800px) {
+    bottom: -42%;
+    left: 13%;
     width: 308px;
     height: 305px;
+  }
+  @media (max-width: 400px) {
+    bottom: -42%;
+    left: 13%;
+    width: 208px;
+    height: 205px;
   }
 `;
 const KayakIcon = () => (

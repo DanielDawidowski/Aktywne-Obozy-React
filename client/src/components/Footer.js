@@ -80,7 +80,7 @@ const Footer = ({ background = "#000", mainColor, secondColor }) => (
     <Container marginTopMin>
       <Flex spaceBetween>
         <Link to="/">
-          <Logo mainColor={mainColor} />
+          <Logo mainColor={mainColor} style={{ width: "60px" }} />
         </Link>
         <List footer>
           <Link to="/">

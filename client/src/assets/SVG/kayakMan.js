@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const KayakMan = styled.svg`
-  @media (max-width: 380px) {
+  @media (max-width: 600px) {
     width: 38px;
     height: 43px;
   }

@@ -2,12 +2,17 @@ import React from "react";
 import styled from "styled-components";
 
 const Tent = styled.svg`
-  width: 577px;
-  height: 475px;
-  @media (min-width: 1000px) {
-    margin-right: 10rem;
+  @media (min-width: 1201px) {
+    margin-right: 12rem;
+    width: 577px;
+    height: 475px;
   }
-  @media (max-width: 400px) {
+  @media (min-width: 801px) and (max-width: 1200px) {
+    margin-right: 2rem;
+    width: 357px;
+    height: 350px;
+  }
+  @media (max-width: 800px) {
     margin-right: 0;
     width: 307px;
     height: 300px;

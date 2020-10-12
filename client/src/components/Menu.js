@@ -1,35 +1,46 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import { signout, isAuth } from "../auth";
+import { MenuNav, MenuNavItem } from "./styles/menuStyles";
+import KayakIcon from "../assets/SVG/kayakMan";
+import MountainIcon from "../assets/SVG/mountainFooter";
+import EnvelopeIcon from "../assets/SVG/envelope";
 
-//Styled Components
 // import { Menu } from "./styles/menuStyles";
 
 const isActive = (history, path) =>
   history.location.pathname === path
-    ? { color: "#333333" }
-    : { color: "#333333" };
+    ? { color: "#F21B3F" }
+    : { color: "#ffffff" };
 
 const Menu = ({ history, toggleMenu, setToggleMenu }) => {
   return (
-    <ul>
+    <MenuNav>
       {!isAuth() && (
         <>
-          <li>
+          <MenuNavItem>
+            <MountainIcon mainColor={"#333333"} secondColor={"#ffffff"} />
             <Link style={isActive(history, "/mountains")} to="/mountains">
               Wyjazdy w Góry
             </Link>
-          </li>
-          <li>
+          </MenuNavItem>
+          <MenuNavItem>
+            <KayakIcon
+              mainColor={"#333333"}
+              secondColor={"#ffffff"}
+              width={"67px"}
+              height={"50px"}
+            />
             <Link style={isActive(history, "/kayaks")} to="/kayaks">
               Spływy Kajakowe
             </Link>
-          </li>
-          <li>
+          </MenuNavItem>
+          <MenuNavItem>
+            <EnvelopeIcon mainColor={"#333333"} secondColor={"#ffffff"} />
             <Link style={isActive(history, "/form")} to="/form">
               Zapisz się
             </Link>
-          </li>
+          </MenuNavItem>
           {/* <li>
             <Link style={isActive(history, "/signin")} to="/signin">
               Signin
@@ -78,7 +89,7 @@ const Menu = ({ history, toggleMenu, setToggleMenu }) => {
           </li>
         </>
       )}
-    </ul>
+    </MenuNav>
   );
 };
 

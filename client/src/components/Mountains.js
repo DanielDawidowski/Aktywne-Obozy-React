@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import { Container, Flex, MainText } from "./styles/globalStyles";
 import {
   MountainsPage,
+  MountainInfo,
   WhiteBg,
   MountainFooter,
 } from "./styles/mountainsStyles";
@@ -102,10 +103,12 @@ const Mountains = () => {
             </Card>
           </Flex>
         </Container>
-        <WaveBlue />
-        <Flex center BlueBG style={{ height: "31vh" }}>
-          <ManIcon />
+      </MountainsPage>
+      <WaveBlue />
+      <MountainInfo>
+        <Flex center>
           <WhiteBg>
+            <ManIcon />
             <Leaf3 />
             <MainText>
               <Flex center>
@@ -115,63 +118,64 @@ const Mountains = () => {
                 </h2>
               </Flex>
             </MainText>
+            <WomanIcon />
           </WhiteBg>
-          <WomanIcon />
         </Flex>
-        <Flex BlueBG center>
-          <List mountain>
-            <ListItem mountain>
-              <CircleIcon mountain>
-                <TeacherIcon />
-              </CircleIcon>
-              <ListText mountain>
-                opiekę wykwalifikowanej kadry pedagogicznej <br /> z 15 letnim
-                doświadczeniem
-              </ListText>
-            </ListItem>
-            <ListItem mountain>
-              <CircleIcon mountain>
-                <HealthIcon />
-              </CircleIcon>
-              <ListText mountain>opiekę medyczną</ListText>
-            </ListItem>
-            <ListItem mountain>
-              <CircleIcon mountain>
-                <InsuranceIcon />
-              </CircleIcon>
-              <ListText mountain>ubezpieczenie NNW</ListText>
-            </ListItem>
-            <ListItem mountain>
-              <CircleIcon mountain>
-                <FoodIcon />
-              </CircleIcon>
-              <ListText mountain>wyżywnienie</ListText>
-            </ListItem>
-            <ListItem mountain>
-              <CircleIcon mountain>
-                <TripIcon />
-              </CircleIcon>
-              <ListText mountain>wycieczki krajoznawczo-turystyczne</ListText>
-            </ListItem>
-            <ListItem mountain>
-              <CircleIcon mountain>
-                <HotelIcon />
-              </CircleIcon>
-              <ListText mountain>nocleg</ListText>
-            </ListItem>
-            <Leafs5 />
-            <GroupLeafsIcon />
-          </List>
-          <TravelIcon />
-        </Flex>
-        <MountainFooter>
-          <Footer
-            background={"#805333"}
-            mainColor={"#FFFFFF"}
-            secondColor={"#CCC3C3"}
-          />
-        </MountainFooter>
-      </MountainsPage>
+      </MountainInfo>
+      <Flex BlueBG center>
+        <List mountain>
+          <ListItem mountain>
+            <CircleIcon mountain>
+              <TeacherIcon />
+            </CircleIcon>
+            <ListText mountain>
+              opiekę wykwalifikowanej kadry pedagogicznej <br /> z 15 letnim
+              doświadczeniem
+            </ListText>
+          </ListItem>
+          <ListItem mountain>
+            <CircleIcon mountain>
+              <HealthIcon />
+            </CircleIcon>
+            <ListText mountain>opiekę medyczną</ListText>
+          </ListItem>
+          <ListItem mountain>
+            <CircleIcon mountain>
+              <InsuranceIcon />
+            </CircleIcon>
+            <ListText mountain>ubezpieczenie NNW</ListText>
+          </ListItem>
+          <ListItem mountain>
+            <CircleIcon mountain>
+              <FoodIcon />
+            </CircleIcon>
+            <ListText mountain>wyżywnienie</ListText>
+          </ListItem>
+          <ListItem mountain>
+            <CircleIcon mountain>
+              <TripIcon />
+            </CircleIcon>
+            <ListText mountain>wycieczki krajoznawczo-turystyczne</ListText>
+          </ListItem>
+          <ListItem mountain>
+            <CircleIcon mountain>
+              <HotelIcon />
+            </CircleIcon>
+            <ListText mountain>nocleg</ListText>
+          </ListItem>
+          <Leafs5 />
+          <GroupLeafsIcon />
+        </List>
+        <TravelIcon />
+      </Flex>
+
+      <MountainFooter>
+        <Footer
+          background={"#805333"}
+          mainColor={"#FFFFFF"}
+          secondColor={"#CCC3C3"}
+        />
+      </MountainFooter>
     </Layout>
   );
 };

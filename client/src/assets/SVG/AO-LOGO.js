@@ -5,14 +5,13 @@ const Logo = styled.svg`
   width: 99px;
   height: 63px;
   @media (max-width: 380px) {
-    width: 38px;
-    height: 43px;
+    width: 80px;
+    height: 85px;
   }
 `;
-const LogoIcon = ({ mainColor = "#ffffff" }) => (
+const LogoIcon = ({ mainColor = "#ffffff", style }) => (
   <Logo
-    width="99"
-    height="63"
+    style={style}
     viewBox="0 0 99 63"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

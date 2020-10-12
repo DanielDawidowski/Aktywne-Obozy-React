@@ -67,7 +67,7 @@ const Kayaks = () => {
         <SunIcon />
         <CloudIcon />
         <Kayak />
-        <OarIcon style={{ bottom: "7%", left: "20%" }} />
+        <OarIcon />
         <Container kayaks>
           <Flex kayaks>
             <TentIcon />

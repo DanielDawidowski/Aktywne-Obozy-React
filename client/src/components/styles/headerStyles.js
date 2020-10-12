@@ -17,7 +17,7 @@ export const Logo = styled.h1`
 export const HeaderNav = styled(motion.div)`
   height: 0px;
   width: 100%;
-  z-index: 99;
+  z-index: 9999;
 `;
 
 export const HamburgerMenu = styled.div`

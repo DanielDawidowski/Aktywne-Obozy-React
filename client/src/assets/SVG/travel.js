@@ -5,7 +5,11 @@ const Travel = styled.svg`
   width: 512px;
   height: 388px;
 
-  @media (max-width: 500px) {
+  @media (max-width: 320px) {
+    transform: scale(0.7);
+  }
+
+  @media (max-width: 600px) {
     width: 338px;
     height: 335px;
     margin: 1rem;
