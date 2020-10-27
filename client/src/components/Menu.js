@@ -5,6 +5,8 @@ import { MenuNav, MenuNavItem } from "./styles/menuStyles";
 import KayakIcon from "../assets/SVG/kayakMan";
 import MountainIcon from "../assets/SVG/mountainFooter";
 import EnvelopeIcon from "../assets/SVG/envelope";
+import { ReactComponent as Gears } from "../assets/SVG/gears.svg";
+import { ReactComponent as Logout } from "../assets/SVG/logout.svg";
 
 // import { Menu } from "./styles/menuStyles";
 
@@ -16,32 +18,31 @@ const isActive = (history, path) =>
 const Menu = ({ history, toggleMenu, setToggleMenu }) => {
   return (
     <MenuNav>
-      {!isAuth() && (
-        <>
-          <MenuNavItem>
-            <MountainIcon mainColor={"#333333"} secondColor={"#ffffff"} />
-            <Link style={isActive(history, "/mountains")} to="/mountains">
-              Wyjazdy w Góry
-            </Link>
-          </MenuNavItem>
-          <MenuNavItem>
-            <KayakIcon
-              mainColor={"#333333"}
-              secondColor={"#ffffff"}
-              width={"67px"}
-              height={"50px"}
-            />
-            <Link style={isActive(history, "/kayaks")} to="/kayaks">
-              Spływy Kajakowe
-            </Link>
-          </MenuNavItem>
-          <MenuNavItem>
-            <EnvelopeIcon mainColor={"#333333"} secondColor={"#ffffff"} />
-            <Link style={isActive(history, "/form")} to="/form">
-              Zapisz się
-            </Link>
-          </MenuNavItem>
-          {/* <li>
+      <>
+        <MenuNavItem>
+          <MountainIcon mainColor={"black"} secondColor={"white"} />
+          <Link style={isActive(history, "/mountains")} to="/mountains">
+            Wyjazdy w Góry
+          </Link>
+        </MenuNavItem>
+        <MenuNavItem>
+          <KayakIcon
+            mainColor={"black"}
+            secondColor={"white"}
+            width={"67px"}
+            height={"50px"}
+          />
+          <Link style={isActive(history, "/kayaks")} to="/kayaks">
+            Spływy Kajakowe
+          </Link>
+        </MenuNavItem>
+        <MenuNavItem>
+          <EnvelopeIcon mainColor={"black"} secondColor={"white"} />
+          <Link style={isActive(history, "/contact")} to="/contact">
+            Napisz do Nas
+          </Link>
+        </MenuNavItem>
+        {/* <li>
             <Link style={isActive(history, "/signin")} to="/signin">
               Signin
             </Link>
@@ -51,31 +52,33 @@ const Menu = ({ history, toggleMenu, setToggleMenu }) => {
               Signup
             </Link>
           </li> */}
-        </>
-      )}
+      </>
+
       {isAuth() && (
         <>
           {isAuth() && isAuth().user.role === 0 && (
-            <li>
+            <MenuNavItem>
               <Link
                 style={isActive(history, "/user/dashboard")}
                 to="/user/dashboard"
               >
                 Dashboard
               </Link>
-            </li>
+            </MenuNavItem>
           )}
           {isAuth() && isAuth().user.role === 1 && (
-            <li>
+            <MenuNavItem>
+              <Gears />
               <Link
                 style={isActive(history, "/admin/dashboard")}
                 to="/admin/dashboard"
               >
-                Admin Dashboard
+                Zarządzaj
               </Link>
-            </li>
+            </MenuNavItem>
           )}
-          <li>
+          <MenuNavItem>
+            <Logout />
             <span
               style={{ cursor: "pointer", color: "##EDEDED" }}
               onClick={() => {
@@ -84,9 +87,9 @@ const Menu = ({ history, toggleMenu, setToggleMenu }) => {
                 });
               }}
             >
-              Signout
+              Wyloguj
             </span>
-          </li>
+          </MenuNavItem>
         </>
       )}
     </MenuNav>

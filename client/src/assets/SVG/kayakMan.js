@@ -10,8 +10,8 @@ const KayakMan = styled.svg`
 const KayakBlueIcon = ({
   mainColor = "#ffffff",
   secondColor = "#ffffff",
-  width = "",
-  height = "",
+  width,
+  height,
 }) => (
   <KayakMan
     width={width}

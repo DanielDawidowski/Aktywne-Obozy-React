@@ -164,10 +164,26 @@ export const Container = styled.div`
     props.marginTopMin &&
     css`
       margin-top: -15%;
-      @media (min-width: 1408px) {
+      @media (min-width: 1401px) {
         max-width: 600px;
       }
-      @media (max-width: 400px) {
+      @media (min-width: 1201px) and (max-width: 1400px) {
+        margin-top: -20%;
+        max-width: 400px;
+      }
+      @media (min-width: 801px) and (max-width: 1200px) {
+        margin-top: -13%;
+        max-width: 400px;
+      }
+      @media (min-width: 601px) and (max-width: 800px) {
+        margin-top: -17%;
+        max-width: 400px;
+      }
+      @media (min-width: 401px) and (max-width: 600px) {
+        margin-top: -20%;
+        max-width: 200px;
+      }
+      @media (min-width: 201px) and (max-width: 400px) {
         margin-top: -25%;
         max-width: 250px;
       }
@@ -200,9 +216,24 @@ export const Flex = styled.div`
     props.spaceAround &&
     css`
       justify-content: space-around;
+      @media (min-width: 801px) and (max-width: 1200px) {
+        grid-gap: 7rem;
+      }
+      @media (min-width: 361px) and (max-width: 800px) {
+        grid-gap: 2rem;
+      }
+      @media (min-width: 200px) and (max-width: 360px) {
+        grid-gap: 0;
+      }
       @media (max-width: 1200px) {
         display: grid;
       }
+    `};
+
+  ${(props) =>
+    props.list &&
+    css`
+      display: grid;
     `};
 
   ${(props) =>
@@ -219,6 +250,15 @@ export const Flex = styled.div`
     css`
       justify-content: center;
       @media (max-width: 850px) {
+        display: grid;
+      }
+    `};
+
+  ${(props) =>
+    props.form &&
+    css`
+      justify-content: center;
+      @media (max-width: 1200px) {
         display: grid;
       }
     `};
@@ -251,7 +291,18 @@ export const Flex = styled.div`
   ${(props) =>
     props.marginTop &&
     css`
-      margin-top: 7rem;
+      @media (min-width: 801px) {
+        margin-top: 7rem;
+      }
+      @media (min-width: 361px) and (max-width: 800px) {
+        margin-top: 6rem;
+      }
+      @media (min-width: 251px) and (max-width: 360px) {
+        margin-top: 1.4rem;
+      }
+      @media (max-width: 250px) {
+        margin-top: 1rem;
+      }
     `}
 
   ${(props) =>
@@ -397,8 +448,135 @@ export const MainText = styled(motion.div)`
   }
 `;
 
-// ${(props) =>
-//   props.spaceBetween &&
-//   css`
-//     justify-content: space-between;
-//   `};
+export const SignupPage = styled(motion.div)`
+  height: 100vh;
+  background-image: repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.06) 0px,
+      rgba(0, 0, 0, 0.06) 19px,
+      transparent 19px,
+      transparent 38px,
+      rgba(0, 0, 0, 0.06) 38px,
+      rgba(0, 0, 0, 0.06) 57px,
+      rgba(0, 0, 0, 0.25) 57px,
+      rgba(0, 0, 0, 0.25) 76px,
+      rgba(0, 0, 0, 0.12) 76px,
+      rgba(0, 0, 0, 0.12) 95px,
+      rgba(0, 0, 0, 0.03) 95px,
+      rgba(0, 0, 0, 0.03) 114px,
+      rgba(0, 0, 0, 0.26) 114px,
+      rgba(0, 0, 0, 0.26) 133px,
+      rgba(0, 0, 0, 0.23) 133px,
+      rgba(0, 0, 0, 0.23) 152px,
+      transparent 152px,
+      transparent 171px,
+      rgba(0, 0, 0, 0.25) 171px,
+      rgba(0, 0, 0, 0.25) 190px,
+      transparent 190px,
+      transparent 209px,
+      rgba(0, 0, 0, 0.03) 209px,
+      rgba(0, 0, 0, 0.03) 228px,
+      rgba(0, 0, 0, 0.23) 228px,
+      rgba(0, 0, 0, 0.23) 247px,
+      rgba(0, 0, 0, 0.03) 247px,
+      rgba(0, 0, 0, 0.03) 266px
+    ),
+    repeating-linear-gradient(
+      135deg,
+      transparent 0px,
+      transparent 3px,
+      rgba(0, 0, 0, 0.09) 3px,
+      rgba(0, 0, 0, 0.09) 6px,
+      rgba(0, 0, 0, 0.03) 6px,
+      rgba(0, 0, 0, 0.03) 9px,
+      rgba(0, 0, 0, 0.09) 9px,
+      rgba(0, 0, 0, 0.09) 12px,
+      rgba(0, 0, 0, 0.09) 12px,
+      rgba(0, 0, 0, 0.09) 15px,
+      rgba(0, 0, 0, 0.06) 15px,
+      rgba(0, 0, 0, 0.06) 18px,
+      rgba(0, 0, 0, 0.01) 18px,
+      rgba(0, 0, 0, 0.01) 21px,
+      rgba(0, 0, 0, 0.02) 21px,
+      rgba(0, 0, 0, 0.02) 24px,
+      transparent 24px,
+      transparent 27px,
+      rgba(0, 0, 0, 0.02) 27px,
+      rgba(0, 0, 0, 0.02) 30px,
+      transparent 30px,
+      transparent 33px,
+      rgba(0, 0, 0, 0.02) 33px,
+      rgba(0, 0, 0, 0.02) 36px,
+      rgba(0, 0, 0, 0.06) 36px,
+      rgba(0, 0, 0, 0.06) 39px,
+      rgba(0, 0, 0, 0.07) 39px,
+      rgba(0, 0, 0, 0.07) 42px,
+      rgba(0, 0, 0, 0.1) 42px,
+      rgba(0, 0, 0, 0.1) 45px,
+      rgba(0, 0, 0, 0.01) 45px,
+      rgba(0, 0, 0, 0.01) 48px,
+      rgba(0, 0, 0, 0.01) 48px,
+      rgba(0, 0, 0, 0.01) 51px,
+      rgba(0, 0, 0, 0.1) 51px,
+      rgba(0, 0, 0, 0.1) 54px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.11) 0px,
+      rgba(0, 0, 0, 0.11) 19px,
+      transparent 19px,
+      transparent 38px,
+      rgba(0, 0, 0, 0.16) 38px,
+      rgba(0, 0, 0, 0.16) 57px,
+      rgb(228, 171, 19) 57px,
+      rgb(228, 171, 19) 76px,
+      rgb(228, 171, 19) 76px,
+      rgb(228, 171, 19) 95px,
+      rgba(0, 0, 0, 0.26) 95px,
+      rgba(0, 0, 0, 0.26) 114px,
+      rgb(228, 171, 19) 114px,
+      rgb(228, 171, 19) 133px,
+      rgb(228, 171, 19) 133px,
+      rgb(228, 171, 19) 152px,
+      transparent 152px,
+      transparent 171px,
+      rgb(228, 171, 19) 171px,
+      rgb(228, 171, 19) 190px,
+      transparent 190px,
+      transparent 209px,
+      rgb(228, 171, 19) 209px,
+      rgb(228, 171, 19) 228px,
+      rgb(228, 171, 19) 228px,
+      rgb(228, 171, 19) 247px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgb(228, 171, 19) 0px,
+      rgb(228, 171, 19) 19px,
+      transparent 19px,
+      transparent 38px,
+      rgb(228, 171, 19) 38px,
+      rgb(228, 171, 19) 57px,
+      rgba(0, 0, 0, 0.03) 57px,
+      rgba(0, 0, 0, 0.03) 76px,
+      rgba(0, 0, 0, 0.26) 76px,
+      rgba(0, 0, 0, 0.26) 95px,
+      rgba(0, 0, 0, 0.06) 95px,
+      rgba(0, 0, 0, 0.06) 114px,
+      rgb(228, 171, 19) 114px,
+      rgb(228, 171, 19) 133px,
+      rgb(228, 171, 19) 133px,
+      rgb(228, 171, 19) 152px,
+      transparent 152px,
+      transparent 171px,
+      rgba(0, 0, 0, 0.11) 171px,
+      rgba(0, 0, 0, 0.11) 190px,
+      transparent 190px,
+      transparent 209px,
+      rgba(0, 0, 0, 0.1) 209px,
+      rgba(0, 0, 0, 0.1) 228px,
+      rgb(228, 171, 19) 228px,
+      rgb(228, 171, 19) 247px
+    ),
+    linear-gradient(0deg, rgb(228, 171, 19), rgb(228, 171, 19));
+`;

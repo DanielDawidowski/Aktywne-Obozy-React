@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import Typical from "react-typical";
+import { getEvents } from "../core/ApiCore";
 import Footer from "./Footer";
 import {
   HomePage,
@@ -42,6 +43,24 @@ import FunIcon from "../assets/SVG/fun";
 import PhotoIcon from "../assets/SVG/photo";
 import LuggageIcon from "../assets/SVG/luggage";
 
+const HomeList = [
+  {
+    id: 0,
+    title: "Dobra Zabawę",
+    icon: <FunIcon />,
+  },
+  {
+    id: 1,
+    title: "Miłe Wspomnienia",
+    icon: <PhotoIcon />,
+  },
+  {
+    id: 2,
+    title: "Udane Wakacje",
+    icon: <LuggageIcon />,
+  }
+];
+
 const variants = {
   initial: { opacity: 0, y: -100 },
   animate: { opacity: 1, y: 0 },
@@ -52,6 +71,34 @@ const variants = {
 };
 
 const Home = () => {
+  const [showKayakEvents, setShowKayakEvents] = useState([]);
+  const [showMountainsEvents, setShowMountainsEvents] = useState([]);
+
+  const loadKayakEvents = () => {
+    getEvents("Mazury").then((data) => {
+      if (data.error) {
+        console.log(data.error);
+      } else {
+        setShowKayakEvents(data);
+      }
+    });
+  };
+
+  const loadMountainEvents = () => {
+    getEvents("Góry").then((data) => {
+      if (data.error) {
+        console.log(data.error);
+      } else {
+        setShowMountainsEvents(data);
+      }
+    });
+  };
+  
+  useEffect(() => {
+    loadMountainEvents();
+    loadKayakEvents();
+  }, []);
+
   return (
     <Layout>
       <HomePage
@@ -106,30 +153,39 @@ const Home = () => {
                   </CircleIcon>
                 </Link>
               </CardIcon>
-              <CardList>
-                <CardListItem green>
-                  <Link to="/kayaks">
-                    <CardDetails>
-                      <span>
-                        {" "}
-                        <CalendarIcon /> 30.06-05.07.2020
-                      </span>
-                      <span>
-                        {" "}
-                        <GroupIcon /> 15 wolnych miejsc
-                      </span>
-                    </CardDetails>
-                  </Link>
-                  <Link to="/kayaks">
-                    <CardListTitle>Czarna Hańcza</CardListTitle>
-                  </Link>
-                </CardListItem>
-                <CardListItem>
-                  <CardDetails>
-                    <h3>Zakończony</h3>
-                  </CardDetails>
-                  <CardListTitle>Krutynia</CardListTitle>
-                </CardListItem>
+              <CardList home>
+                
+                {showKayakEvents.map((event, i) => {
+                  return (
+                    event.status === "Aktualne" ? 
+                    <>
+                      <CardListItem green key={i}>
+                        <Link to="/kayaks">
+                            <CardListTitle>{event.name}</CardListTitle>            
+                            <CardDetails>
+                              <span>
+                                {" "}
+                                <CalendarIcon fill="#A44F3E" /> {event.startDate}
+                              </span>
+                              <span>
+                                {" "}
+                                <GroupIcon /> <strong>Zobacz</strong> 
+                              </span>
+                            </CardDetails>
+                          </Link>
+                      </CardListItem>
+                      </>
+                      : 
+                        <>
+                          <CardListItem>
+                            <CardDetails>
+                              <h3>{event.status}</h3>
+                            </CardDetails>
+                            <CardListTitle>{event.name}</CardListTitle>
+                          </CardListItem>
+                        </>
+                    )
+                })}
                 <CardTitle>
                   <h3>
                     Spływy
@@ -146,36 +202,40 @@ const Home = () => {
                   </CircleIcon>
                 </Link>
               </CardIcon>
-              <CardList>
-                <CardListItem blue>
-                  <Link to="/mountains">
-                    <CardDetails>
-                      <span>
-                        {" "}
-                        <CalendarIcon /> 30.06-05.07.2020
-                      </span>
-                      <span>
-                        {" "}
-                        <GroupIcon /> 15 wolnych miejsc
-                      </span>
-                    </CardDetails>
-                  </Link>
-                  <Link to="/mountains">
-                    <CardListTitle>Zakopane</CardListTitle>
-                  </Link>
-                </CardListItem>
-                <CardListItem>
-                  <CardDetails>
-                    <h3>Zakończony</h3>
-                  </CardDetails>
-                  <CardListTitle>Małe Ciche</CardListTitle>
-                </CardListItem>
-                <CardListItem>
-                  <CardDetails>
-                    <h3>Zakończony</h3>
-                  </CardDetails>
-                  <CardListTitle>Zawoja</CardListTitle>
-                </CardListItem>
+              <CardList home>
+                {showMountainsEvents.map((event, i) => {
+                  return (
+                    event.status === "Aktualne" ? 
+                    <>
+                      <CardListItem blue key={i}>
+                          <Link to="/mountains">
+                            <CardListTitle>{event.name}</CardListTitle>            
+                            <CardDetails>
+                              <span>
+                                {" "}
+                                <CalendarIcon fill="#A44F3E" /> {event.startDate}
+                              </span>
+                              <span>
+                                {" "}
+                                <GroupIcon /><strong>Zobacz</strong> 
+                              </span>
+                            </CardDetails>
+                          </Link>
+                      </CardListItem>
+                      </>
+                        : 
+                          <>
+                            <CardListItem>
+                              <CardDetails>
+                                <h3>{event.status}</h3>
+                              </CardDetails>
+                              <CardListTitle>{event.name}</CardListTitle>
+                            </CardListItem>
+                          </>
+                        )
+                      }
+                    )
+                  }
                 <CardTitle>
                   <h3>
                     Wyjazdy w
@@ -204,24 +264,14 @@ const Home = () => {
         <Flex spaceAround>
           <ChildrenImage />
           <List>
-            <ListItem>
-              <CircleIcon lightBlue>
-                <FunIcon />
-              </CircleIcon>
-              <ListText>Dobra Zabawę</ListText>
-            </ListItem>
-            <ListItem>
-              <CircleIcon lightBlue>
-                <PhotoIcon />
-              </CircleIcon>
-              <ListText>Miłe Wspomnienia</ListText>
-            </ListItem>
-            <ListItem>
-              <CircleIcon lightBlue>
-                <LuggageIcon />
-              </CircleIcon>
-              <ListText>Udane Wakacje</ListText>
-            </ListItem>
+            {HomeList.map((item, i) => (
+              <ListItem key={i}>
+                <CircleIcon lightBlue>
+                  {item.icon}
+                </CircleIcon>
+                <ListText>{item.title}</ListText>
+              </ListItem>
+            ))}
           </List>
         </Flex>
       </Container>

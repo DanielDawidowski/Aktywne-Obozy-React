@@ -17,7 +17,7 @@ export const HomePage = styled(motion.div)`
 
 export const HomeCards = styled(motion.div)`
   width: 100%;
-  height: 80vh;
+  /* height: 80vh;
 
   @media (max-width: 801px) {
     height: 140vh;
@@ -33,7 +33,7 @@ export const HomeCards = styled(motion.div)`
 
   @media (min-width: 200px) and (max-width: 400px) {
     height: 210vh;
-  }
+  } */
 `;
 
 export const HomeFooter = styled(motion.div)`
@@ -74,6 +74,10 @@ export const ListItem = styled(motion.li)`
   align-items: center;
   /* padding: 0 3rem; */
 
+    @media (min-width: 200px) and (max-width: 360px) {
+        transform: scale(0.8)
+      }
+
   ${(props) =>
     props.footer &&
     css`
@@ -109,6 +113,7 @@ export const List = styled(motion.ul)`
   position: relative;
   display: grid;
 
+
   ${(props) =>
     props.footer &&
     css`
@@ -126,8 +131,13 @@ export const List = styled(motion.ul)`
       border-radius: 26px;
       background: ${(props) => props.theme.white};
       margin-right: 2rem;
+
+      /* & > ${ListItem} {
+        justify-content: space-around;
+      } */
+
       @media (max-width: 320px) {
-        transform: scale(0.7);
+        transform: scale(0.8);
       }
       @media (max-width: 480px) {
         margin: 0.2rem;
@@ -141,7 +151,7 @@ export const List = styled(motion.ul)`
       border-radius: 26px;
       background: ${(props) => props.theme.white};
       @media (max-width: 360px) {
-        transform: scale(0.7);
+        transform: scale(0.9);
       }
       @media (max-width: 1200px) {
         margin: 17rem 1rem 1rem 1rem;
@@ -163,6 +173,7 @@ export const ListText = styled(motion.div)`
   background: ${(props) => props.theme.light_green};
   border-radius: 26px;
   font-weight: 800;
+
   @media (max-width: 380px) {
     width: 203px;
     margin-left: 1rem;
@@ -176,21 +187,18 @@ export const ListText = styled(motion.div)`
       width: auto;
       height: 1rem;
       padding: 2rem;
-      @media (max-width: 380px) {
+
+       @media (min-width: 400px) and (max-width: 800px)  {
         display: flex;
         font-size: ${(props) => props.theme.font2};
+        padding: 0.4rem;
+      }
+
+      @media (max-width: 400px) {
+        display: flex;
+        font-size: ${(props) => props.theme.font1};
         padding: 0.4rem;
       }
     `}
 `;
 
-// ${(props) =>
-//     props.spaceAround &&
-//     css`
-//       display: flex;
-//       justify-content: space-around;
-//       width: 80%;
-//     `}
-// @media (max-width: 380px) {
-//  top: -228%;
-//  }

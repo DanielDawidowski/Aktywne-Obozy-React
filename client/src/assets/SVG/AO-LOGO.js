@@ -2,11 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 const Logo = styled.svg`
-  width: 99px;
-  height: 63px;
-  @media (max-width: 380px) {
+  padding-top: 0.8rem;
+  width: 199px;
+  height: 163px;
+
+  @media (max-width: 1200px) {
     width: 80px;
-    height: 85px;
+    height: 60px;
   }
 `;
 const LogoIcon = ({ mainColor = "#ffffff", style }) => (

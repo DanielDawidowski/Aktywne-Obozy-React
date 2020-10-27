@@ -5,7 +5,11 @@ import { motion } from "framer-motion";
 export const KayaksPage = styled(motion.div)`
   overflow: hidden;
   height: 100vh;
-  background-color: ${(props) => props.theme.light_green};
+  background-image: linear-gradient(
+    361deg,
+    rgb(113, 245, 91),
+    rgb(18, 194, 197)
+  );
   @media (max-width: 800px) {
     height: 135vh;
   }
@@ -15,7 +19,7 @@ export const KayaksPage = styled(motion.div)`
   }
 
   @media (max-width: 400px) {
-    height: 155vh;
+    height: 145vh;
   }
 `;
 
@@ -37,10 +41,10 @@ export const KayakInfo = styled(motion.div)`
   @media (min-width: 801px) and (max-width: 1200px) {
     height: 155vh;
   }
-  @media (min-width: 380px) and (max-width: 800px) {
+  @media (min-width: 381px) and (max-width: 800px) {
     height: 125vh;
   }
-  @media (max-width: 380px) {
+  @media (min-width: 181px) and (max-width: 380px) {
     height: 145vh;
   }
 `;
@@ -56,7 +60,7 @@ export const KayakFooter = styled(motion.div)`
   @media (max-width: 600px) {
     margin-top: -30%;
   }
-  @media (max-width: 400px) {
+  @media (min-width: 200px) and (max-width: 400px) {
     margin-top: -40%;
   }
 `;

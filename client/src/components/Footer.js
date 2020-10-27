@@ -6,58 +6,19 @@ import { Container, Flex } from "./styles/globalStyles";
 import { List, ListItem } from "./styles/homeStyles";
 import Logo from "../assets/SVG/AO-LOGO.js";
 import SVGIcon from "../assets/SVG/SVGIcon";
-
 import KayakIcon from "../assets/SVG/kayakMan";
 import MountainIcon from "../assets/SVG/mountainFooter";
 import EnvelopeIcon from "../assets/SVG/envelope";
-import WaveFooter from "../assets/SVG/footer-wave";
-
-const footerNav = [
-  {
-    id: 0,
-    title: "not humble",
-    path: "/not-humble",
-    video: "featured-video.mp4",
-  },
-  {
-    id: 1,
-    title: "bleeping easy",
-    path: "/bleeping-easy",
-    video: "easy.mp4",
-  },
-  {
-    id: 2,
-    title: "make it zero",
-    path: "/make-it-zero",
-    video: "make-it-zero.mp4",
-  },
-  {
-    id: 3,
-    title: "it takes an island",
-    path: "/it-takes-an-island",
-    video: "it-takes-an-island.mp4",
-  },
-  {
-    id: 4,
-    title: "50 beaches",
-    path: "/50-beaches",
-    video: "50-beaches.mp4",
-  },
-];
 
 const Foot = styled(motion.footer)`
   position: relative;
   margin-top: 10rem;
 
-  .wave {
-    @media (max-width: 380px) {
-      height: 100%;
-    }
-  }
   .footer-logo {
     width: 140px;
     height: 100px;
-    @media (max-width: 380px) {
+
+    @media (max-width: 400px) {
       width: 60px;
       height: 35px;
     }
@@ -80,7 +41,7 @@ const Footer = ({ background = "#000", mainColor, secondColor }) => (
     <Container marginTopMin>
       <Flex spaceBetween>
         <Link to="/">
-          <Logo mainColor={mainColor} style={{ width: "60px" }} />
+          <Logo className="footer-logo" mainColor={mainColor} />
         </Link>
         <List footer>
           <Link to="/">
@@ -104,7 +65,7 @@ const Footer = ({ background = "#000", mainColor, secondColor }) => (
               </h4>
             </ListItem>
           </Link>
-          <Link to="/form">
+          <Link to="/contact">
             <ListItem footer>
               <EnvelopeIcon mainColor={mainColor} secondColor={secondColor} />
               <h4 style={{ marginLeft: "2.8rem", color: mainColor }}>

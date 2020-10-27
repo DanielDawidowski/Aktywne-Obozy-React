@@ -32,22 +32,21 @@ const Kayak = styled.svg`
     width: 278px;
     height: 275px;
   }
-  /* 
-  @media (max-width: 400px) {
+  
+  @media (min-width: 201px) and (max-width: 400px) {
+    bottom: -34%;
+    left: 23%;
+    width: 258px;
+    height: 255px;
+  }
+
+  /* @media (max-width: 400px) {
     bottom: -25%;
     left: 23%;
     width: 258px;
     height: 255px;
     transform: rotate(100deg);
   } */
-
-  @media (max-width: 400px) {
-    bottom: -25%;
-    left: 23%;
-    width: 258px;
-    height: 255px;
-    transform: rotate(100deg);
-  }
 `;
 const KayakIcon = () => (
   <Kayak

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect  } from "react";
 import Header from "./Header";
 import Navigation from "./Navigation";
 
@@ -71,13 +71,21 @@ img {
 }
 `;
 
+ 
+
 const Layout = ({ children }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
+// const [ spinner, setSpinner ] = useState(false);
+
+//  useEffect(() => {
+//     setTimeout(() => setSpinner(true), 2000)
+//   }, []);
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       {/* <Container> */}
+      {/* {!spinner && <div>Your content</div>} */}
       <Header toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
       <Navigation toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
       <main>{children}</main>

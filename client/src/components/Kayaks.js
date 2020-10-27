@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import { Link } from "react-router-dom";
+import { getEvents } from "../core/ApiCore";
 import Layout from "./Layout";
 import { Container, Flex, MainText } from "./styles/globalStyles";
 import Footer from "./Footer";
 import { WhiteBg } from "./styles/mountainsStyles";
-import Leaf from "../assets/SVG/leafs6";
 import WomanIcon from "../assets/SVG/woman";
 import ManIcon from "../assets/SVG/man";
+import Leaf from "../assets/SVG/leafs6";
 import {
   Card,
   CardIcon,
   CircleIcon,
+  CardTitle,
   CardList,
   CardListItem,
   CardDetails,
@@ -23,13 +25,7 @@ import {
   KayakFooter,
 } from "./styles/kayaksStyles";
 import { List, ListItem, ListText } from "./styles/homeStyles";
-import TripIcon from "../assets/SVG/trip";
-import FoodIcon from "../assets/SVG/food";
-import InsuranceIcon from "../assets/SVG/insurance";
-import HealthIcon from "../assets/SVG/health";
-import TeacherIcon from "../assets/SVG/teacher";
-import HotelIcon from "../assets/SVG/hotel";
-import GroupLeafsIcon from "../assets/SVG/leaf4";
+
 import TentIcon from "../assets/SVG/BigTent";
 import CalendarIcon from "../assets/SVG/calendar";
 import GroupIcon from "../assets/SVG/group";
@@ -38,11 +34,11 @@ import KayakIcon from "../assets/SVG/kayakMan";
 import SunIcon from "../assets/SVG/sun";
 import CloudIcon from "../assets/SVG/cloud";
 import Kayak from "../assets/SVG/kayak";
-import KayakRed from "../assets/SVG/kayakRed";
 import OarIcon from "../assets/SVG/oar";
 import WaveGreen from "../assets/SVG/wave";
 import SwanIcon from "../assets/SVG/swan";
 import StorkIcon from "../assets/SVG/stork";
+import InfoList from "./InfoList";
 
 const variants = {
   initial: { opacity: 0, y: -100 },
@@ -54,6 +50,24 @@ const variants = {
 };
 
 const Kayaks = () => {
+  const [showKayakEvents, setShowKayakEvents] = useState([]);
+
+  const loadEvents = () => {
+    getEvents("Mazury").then((data) => {
+      if (data.error) {
+        console.log(data.error);
+      } else {
+        setShowKayakEvents(data);
+      }
+    });
+  };
+  
+  useEffect(() => {
+    loadEvents();
+  }, []);
+
+  {console.log(showKayakEvents)}
+
   return (
     <Layout>
       <KayaksPage
@@ -72,45 +86,57 @@ const Kayaks = () => {
           <Flex kayaks>
             <TentIcon />
             <Card white>
-              <MainText right>
-                <h2>
-                  <span className="afterline">Spł</span>ywy <br /> Kajakowe
-                </h2>
-              </MainText>
-              <CardIcon noBorder>
-                <KayakIcon
-                  mainColor={"#6D3326"}
-                  secondColor={"#D07230"}
-                  width={"117px"}
-                  height={"90px"}
-                />
-              </CardIcon>
+              <CardTitle white>
+                <MainText right>
+                  <h2>
+                    <span className="afterline">Spł</span>ywy <br /> Kajakowe
+                  </h2>
+                </MainText>
+                <CardIcon noBorder>
+                  <KayakIcon
+                    mainColor={"#6D3326"}
+                    secondColor={"#D07230"}
+                    width={"117px"}
+                    height={"90px"}
+                  />
+                </CardIcon>
+              </CardTitle>
               <CardList right>
-                <CardListItem blue right>
-                  <CardDetails>
-                    <span>
-                      {" "}
-                      <CalendarIcon /> 30.06-05.07.2020
-                    </span>
-                    <span>
-                      {" "}
-                      <GroupIcon /> 15 wolnych miejsc
-                    </span>
-                  </CardDetails>
-                  <CardListTitle right>
-                    <h5>Czarna Hańcza</h5>
-                    <h4>Cena : 650 zł</h4>
-                    <Link to="/form">
-                      <h2>Aktualne</h2>
-                    </Link>
-                  </CardListTitle>
-                </CardListItem>
-                <CardListItem right>
-                  <CardDetails>
-                    <h3>Zakończony</h3>
-                  </CardDetails>
-                  <CardListTitle>Krutynia</CardListTitle>
-                </CardListItem>
+                 {showKayakEvents.map((event, i) => {
+                  return (
+                    event.status === "Aktualne" ? 
+                    <>
+                      <Link to={`/form/${event._id}`}>
+                        <CardListItem blue right key={i}>
+                          <CardDetails>
+                          <span style={{color:"#A44F3E"}}>
+                          {" "}
+                              <CalendarIcon fill="#A44F3E"/> {event.startDate}
+                            </span>
+                            {/* <span>
+                              {" "}
+                              <GroupIcon /> {event.amount}
+                            </span> */}
+                          </CardDetails>
+                          <CardListTitle right>
+                            <h5>{event.name}</h5>
+                            <h4>{event.price} zł</h4>
+                            <h2>Zapisz się</h2>
+                          </CardListTitle>
+                        </CardListItem>
+                      </Link>
+                    </>
+                      : 
+                    <>
+                      <CardListItem right>
+                        <CardDetails>
+                          <h3>Zakończony</h3>
+                        </CardDetails>
+                        <CardListTitle>Krutynia</CardListTitle>
+                      </CardListItem>
+                    </>    
+                  )
+                })}
               </CardList>
             </Card>
           </Flex>
@@ -161,59 +187,7 @@ const Kayaks = () => {
                 </Flex>
               </MainText>
             </WhiteBg>
-
-            <List kayaks>
-              <Leaf
-                style={{
-                  top: "-16%",
-                  right: "15%",
-                  transform: "rotate(105deg)",
-                }}
-              />
-              <KayakRed />
-              {/* <OarIcon
-                style={{
-                  bottom: "-17%",
-                  right: "-35%",
-                  transform: "rotate(125deg)",
-                  width: "100px",
-                  height: "100px",
-                }}
-              /> */}
-              <ListItem mountain>
-                <CircleIcon mountain>
-                  <TeacherIcon />
-                </CircleIcon>
-                <ListText mountain>
-                  opiekę wykwalifikowanej kadry pedagogicznej <br /> z 15 letnim
-                  doświadczeniem
-                </ListText>
-              </ListItem>
-              <ListItem mountain>
-                <CircleIcon mountain>
-                  <HealthIcon />
-                </CircleIcon>
-                <ListText mountain>opiekę medyczną</ListText>
-              </ListItem>
-              <ListItem mountain>
-                <CircleIcon mountain>
-                  <InsuranceIcon />
-                </CircleIcon>
-                <ListText mountain>ubezpieczenie NNW</ListText>
-              </ListItem>
-              <ListItem mountain>
-                <CircleIcon mountain>
-                  <FoodIcon />
-                </CircleIcon>
-                <ListText mountain>wyżywnienie</ListText>
-              </ListItem>
-              <ListItem mountain>
-                <CircleIcon mountain>
-                  <TripIcon />
-                </CircleIcon>
-                <ListText mountain>wycieczki krajoznawczo-turystyczne</ListText>
-              </ListItem>
-            </List>
+            <InfoList kayakIcons={true} />
           </Flex>
         </Container>
       </KayakInfo>
